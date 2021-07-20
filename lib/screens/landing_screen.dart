@@ -1,9 +1,12 @@
-import 'package:deli_food/data/enum/landing_button.dart';
-import 'package:deli_food/widget/deli_underline_button.dart';
-import 'package:deli_food/widget/login_button.dart';
 import 'package:flutter/material.dart';
 
+import '../data/enum/landing_button.dart';
+import '../widget/deli_underline_button.dart';
+import '../widget/login_button.dart';
+import '../widget/logo_withtext.dart';
+
 class LandingScreen extends StatelessWidget {
+  static String routerName = "/";
   const LandingScreen({Key? key}) : super(key: key);
 
   @override
@@ -15,24 +18,7 @@ class LandingScreen extends StatelessWidget {
           child: Container(
             child: Column(
               children: [
-                Container(
-                  padding: EdgeInsets.only(
-                    top: 140,
-                  ),
-                  alignment: Alignment.center,
-                  child: Image.asset(
-                    "assets/logo_white.jpg",
-                    height: 140,
-                    width: 140,
-                  ),
-                ),
-                Text(
-                  "DELI Food",
-                  style: TextStyle(
-                    fontSize: 24,
-                    color: Colors.white,
-                  ),
-                ),
+                LogoWithText(),
                 SizedBox(
                   height: 60,
                 ),

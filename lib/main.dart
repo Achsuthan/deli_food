@@ -1,3 +1,4 @@
+import 'package:deli_food/screens/register_screen.dart';
 import 'package:flutter/material.dart';
 
 import './screens/landing_screen.dart';
@@ -25,7 +26,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       routes: {
-        '/': (_) => LandingScreen(),
+        LandingScreen.routerName: (_) => LandingScreen(),
+        RegisterScreen.routerName: (_) => RegisterScreen(),
       },
     );
   }

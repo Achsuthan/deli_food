@@ -1,16 +1,24 @@
-import 'package:deli_food/data/enum/landing_button.dart';
 import 'package:flutter/material.dart';
+
+import '../data/enum/landing_button.dart';
+import '../screens/register_screen.dart';
 
 class DeliUnderlineButton extends StatelessWidget {
   final LandingButtonType buttonType;
   const DeliUnderlineButton({required this.buttonType, Key? key})
       : super(key: key);
 
+  handleButtonClick(BuildContext context) {
+    if (buttonType == LandingButtonType.REGISTER) {
+      Navigator.pushNamed(context, RegisterScreen.routerName);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
       child: TextButton(
-        onPressed: () => {print("user pressed $buttonType")},
+        onPressed: () => handleButtonClick(context),
         child: Text(
           buttonType == LandingButtonType.REGISTER
               ? "Create a new account"
