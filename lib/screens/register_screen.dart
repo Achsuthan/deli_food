@@ -88,7 +88,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                   Container(
                     alignment: Alignment.center,
-                    child: DeliBorderButton(),
+                    child: DeliBorderButton(
+                      title: "REGISTER",
+                    ),
                   ),
                   SizedBox(
                     height: 40,
