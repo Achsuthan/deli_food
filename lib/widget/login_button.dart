@@ -1,19 +1,23 @@
-import 'package:deli_food/data/enum/landing_button.dart';
 import 'package:flutter/material.dart';
+
+import '../data/enum/landing_button.dart';
+import '../screens/signin_screen.dart';
 
 class LoginBUtton extends StatelessWidget {
   final LandingButtonType buttonType;
 
   const LoginBUtton({required this.buttonType, Key? key}) : super(key: key);
 
-  loginButtonPressed() {
-    print("User pressed $buttonType");
+  loginButtonPressed(BuildContext ctx) {
+    if (buttonType == LandingButtonType.DELIFOOD) {
+      Navigator.pushNamed(ctx, SignInScreen.routerName);
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: loginButtonPressed,
+      onTap: () => loginButtonPressed(context),
       child: Padding(
         padding: EdgeInsets.only(left: 20, right: 20),
         child: Container(
