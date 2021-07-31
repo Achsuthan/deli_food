@@ -1,8 +1,11 @@
+import 'package:deli_food/screens/code_verfication_screen.dart';
+import 'package:deli_food/screens/new_password_screen.dart';
 import 'package:flutter/material.dart';
 
 import './screens/register_screen.dart';
 import './screens/signin_screen.dart';
 import './screens/landing_screen.dart';
+import './screens/forgot_password_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -30,6 +33,9 @@ class MyApp extends StatelessWidget {
         LandingScreen.routerName: (_) => LandingScreen(),
         RegisterScreen.routerName: (_) => RegisterScreen(),
         SignInScreen.routerName: (_) => SignInScreen(),
+        ForgotPasswordScreen.routerName: (_) => ForgotPasswordScreen(),
+        CodeVerificationScreen.routerName: (_) => CodeVerificationScreen(),
+        NewPasswordScreen.routerName: (_) => NewPasswordScreen(),
       },
     );
   }

@@ -4,4 +4,8 @@ enum LandingButtonType {
   DELIFOOD,
   GUEST,
   REGISTER,
+  SIGNUP,
+  SIGNIN,
+  FORGOTCODEREQUEST,
+  RESET,
 }

@@ -1,18 +1,26 @@
 import 'package:flutter/material.dart';
 
+import '../data/enum/landing_button.dart';
+import '../screens/code_verfication_screen.dart';
+
 class DeliBorderButton extends StatelessWidget {
-  final String title;
+  final LandingButtonType buttonType;
   const DeliBorderButton({
-    required this.title,
+    required this.buttonType,
     Key? key,
   }) : super(key: key);
+
+  void buttonHandler(BuildContext ctx) {
+    print("button type $buttonType");
+    if (buttonType == LandingButtonType.FORGOTCODEREQUEST) {
+      Navigator.pushNamed(ctx, CodeVerificationScreen.routerName);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        print("Button pressed");
-      },
+      onTap: () => buttonHandler(context),
       child: Container(
         alignment: Alignment.center,
         height: 50,
@@ -25,7 +33,13 @@ class DeliBorderButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
         ),
         child: Text(
-          title,
+          buttonType == LandingButtonType.SIGNUP
+              ? "REGISTER"
+              : buttonType == LandingButtonType.SIGNIN
+                  ? "SIGN IN"
+                  : buttonType == LandingButtonType.FORGOTCODEREQUEST
+                      ? "SEND"
+                      : "RESET",
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
